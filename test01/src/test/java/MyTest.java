@@ -24,12 +24,18 @@ public class MyTest {
         UserService userService = new UserService();
         System.out.println(userService);
 
+        //获取userService属性
         Field serviceField = clazz.getDeclaredField("userService");
         serviceField.setAccessible(true);
         String name = serviceField.getName();
         name = name.substring(0, 1).toUpperCase() + name.substring(1, name.length());
+        //拼接后的方法名
         String setMethodName = "set" + name;
+
+        //获取方法，设置参数方法类型
         Method method = clazz.getMethod(setMethodName, UserService.class);
+
+        //执行方法， 传参
         method.invoke(userController, userService);
         System.out.println(userController.getUserService());
 

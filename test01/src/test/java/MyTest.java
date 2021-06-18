@@ -47,13 +47,14 @@ public class MyTest {
         UserController userController = new UserController();
         Class<? extends UserController> clazz = userController.getClass();
         Stream.of(clazz.getDeclaredFields()).forEach(field -> {
-            System.out.println("field:"+ field);
+            System.out.println("field:   "+ field);
             AutoWired annotation = field.getAnnotation(AutoWired.class);
+            System.out.println("field.getAnnotation:   "+ annotation +'\n');
             if (annotation != null){
                 field.setAccessible(true);
                 //获取属性类型
                 Class<?> type = field.getType();
-                System.out.println("type:"+type);
+                System.out.println("type:   "+type);
                 try {
                     Object o = type.newInstance();
                     field.set(userController, o);
@@ -62,7 +63,7 @@ public class MyTest {
                 }
             }
         });
-        System.out.println(userController.getUserService());
+        System.out.println("userController:   "+userController.getUserService());
 
     }
 

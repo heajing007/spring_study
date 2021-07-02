@@ -3,7 +3,7 @@ import com.study.service.TestService;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class MyTest {
+public class MySpringTest {
 
 	@Test
 	public void fun1(){

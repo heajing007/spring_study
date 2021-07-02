@@ -1,17 +1,9 @@
-plugins {
-    id 'java'
-}
+description = "My Spring"
 
-group 'org.springframework'
-version '5.1.12.RELEASE'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
+apply plugin: "groovy"
 dependencies {
+    compile(project(":spring-context"))
+    compile(project(":spring-context"))
     compile(project(":spring-context"))
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

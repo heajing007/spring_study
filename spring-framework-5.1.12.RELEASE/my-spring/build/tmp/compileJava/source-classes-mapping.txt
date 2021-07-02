@@ -1,6 +1,0 @@
-com/study/config/TestConfig.java
- com.study.config.TestConfig
-com/study/service/UserService.java
- com.study.service.UserService
-com/study/service/TestService.java
- com.study.service.TestService

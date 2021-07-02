@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MySpringTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-02T08:12:28" hostname="haj.local" time="120.863">
+  <properties/>
+  <testcase name="fun1" classname="MySpringTest" time="120.863"/>
+  <system-out><![CDATA[test init
+user init
+spring生命周期的初始化回调方法!!!!!
+com.study.service.TestService@2871ad54
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,3 +1,8 @@
+import com.test.entity.A;
+import com.test.entity.B;
+import org.junit.Test;
+import org.springframework.beans.BeanUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -72,7 +77,6 @@ public class Solution {
 
 
     //二分法
-
     public int searchInsert(int[] nums, int target) {
         int len = nums.length;
         int left=0, right=len-1, index=0;
@@ -103,6 +107,20 @@ public class Solution {
         return index;
     }
 
+
+    @Test
+    public void fun1(){
+        A a = new A();
+        a.setA("a");
+        a.setB("b");
+        a.setName(null);
+        B b = new B();
+        b.setName("name");
+
+        BeanUtils.copyProperties(a, b);
+        System.out.println(b);
+
+    }
 
 
 }

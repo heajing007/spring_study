@@ -10,4 +10,6 @@ import lombok.ToString;
 public class B {
     private Integer age;
     private String name;
+    private String a;
+    private String b;
 }

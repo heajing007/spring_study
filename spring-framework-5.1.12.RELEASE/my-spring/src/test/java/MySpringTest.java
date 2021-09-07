@@ -1,7 +1,6 @@
 import com.study.config.TestConfig;
 import com.study.service.TestService;
 import org.junit.Test;
-import org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MySpringTest {
@@ -21,4 +20,5 @@ public class MySpringTest {
 		TestService testBean = ac.getBean(TestService.class);
 		System.out.println(testBean);
 	}
+
 }

@@ -6,7 +6,7 @@ public class SingletonTest02 {
 }
 
 /**
- * 懒加载
+ * 懒汉式（线程不安全
  */
 class Singleton1{
     private static Singleton1 instance;
@@ -24,7 +24,7 @@ class Singleton1{
 }
 
 /**
- *  双重检查
+ * 懒汉式 双重检查（线程安全
  */
 class Singleton2{
     private static volatile Singleton2 instance;
@@ -43,4 +43,26 @@ class Singleton2{
         }
         return instance;
     }
+}
+
+/**
+ * 静态内部类（线程安全
+ */
+class Singleton3{
+
+    private Singleton3(){
+
+    }
+
+    private static class Singleton3Instance{
+        private static final Singleton3 INSTANCE = new Singleton3();
+    }
+
+    private Singleton3 getInstance(){
+        return Singleton3Instance.INSTANCE;
+    }
+}
+
+enum Singleton4{
+    INSTANCE;
 }

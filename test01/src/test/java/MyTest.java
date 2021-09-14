@@ -20,6 +20,7 @@ public class MyTest {
     @Test
     public void fun1() throws Exception {
         UserController userController = new UserController();
+        System.out.println(userController.getUserService());
         Class<? extends UserController> clazz = userController.getClass();
         UserService userService = new UserService();
         System.out.println(userService);
@@ -45,6 +46,7 @@ public class MyTest {
     @Test
     public void fun2(){
         UserController userController = new UserController();
+        System.out.println("userController:   "+userController.getUserService());
         Class<? extends UserController> clazz = userController.getClass();
         Stream.of(clazz.getDeclaredFields()).forEach(field -> {
             System.out.println("field:   "+ field);

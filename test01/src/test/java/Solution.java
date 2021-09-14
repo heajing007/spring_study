@@ -3,8 +3,9 @@ import com.test.entity.B;
 import org.junit.Test;
 import org.springframework.beans.BeanUtils;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
@@ -120,7 +121,17 @@ public class Solution {
         BeanUtils.copyProperties(a, b);
         System.out.println(b);
 
+        List<Integer> list = new ArrayList<>();
+        list.clear();
+    }
+
+    public <T extends A> T getClass(Class<T> c){
+        A a = null;
+        return (T) a;
     }
 
 
+
+
 }
+

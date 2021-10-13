@@ -69,4 +69,23 @@ public class MyTest {
 
     }
 
+    @Test
+    public void fun3(){
+        A a = new A();
+        Class<? extends A> aClass = a.getClass();
+        Field[] declaredFields = aClass.getDeclaredFields();
+        for (Field field : declaredFields){
+            System.out.println(field.getName());
+        }
+    }
+
+    @Test
+    public void fun4() throws ClassNotFoundException {
+        Class<?> aClass = Class.forName(A.class.getName());
+        Field[] declaredFields = aClass.getDeclaredFields();
+        for (Field field : declaredFields){
+            System.out.println(field.getName());
+        }
+    }
+
 }

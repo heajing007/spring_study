@@ -8,6 +8,7 @@ public class DesignTest {
         InvocationHandler stuHandler = new MyInvocationHandler<Person>(stu);
         Person stuProxy = (Person) Proxy.newProxyInstance(Person.class.getClassLoader(), new Class<?>[]{Person.class},stuHandler);
         stuProxy.talk();
+        stuProxy.play();
     }
 
 
@@ -29,7 +30,10 @@ class MyInvocationHandler<T> implements InvocationHandler {
 }
 
 interface Person{
-    public void talk();
+    void talk();
+    void play();
+
+
 }
 
 class Stu implements Person{

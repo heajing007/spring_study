@@ -99,13 +99,15 @@ public class MyTest {
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
-        calendar.add(Calendar.MONTH, -1);
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMinimum(Calendar.DAY_OF_MONTH));
-        Date entryEndTime = calendar.getTime();
-        calendar.add(Calendar.MONTH, -1);
+        calendar.add(Calendar.MONTH, -2);
         calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMinimum(Calendar.DAY_OF_MONTH));
         Date entryStartTime = calendar.getTime();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH));
+        Date entryEndTime = calendar.getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
         System.out.println(sdf.format(entryStartTime));
         System.out.println(sdf.format(entryEndTime));
 
@@ -113,26 +115,27 @@ public class MyTest {
 
     @Test
     public void fun6() {
-        String str1 = "202108";
-        String str2 = "202109";
-        double v = (5 * 0.3 + 6 * 0.3);
-        System.out.println(v);
-        System.out.println((int)v);
+        String str1 = "202109";
+        String str2 = "202108";
+        System.err.println(str1.compareTo(str2));
+//        Double v = (5 * 0.3 + 6 * 0.3);
+//        System.out.println(v);
+//        System.out.println(v.intValue());
 
-        double x = 1D;
-        int y = 0;
-        float z = 0;
-        System.err.println(Objects.equals(x, 0D));
-        System.err.println(Objects.equals(y, 0));
-        System.err.println(x>0);
-        System.err.println(Objects.equals(z, 0));
-        System.err.println(Objects.equals(z, 0F));
+//        Double x = 0D;
+//        Integer y = 0;
+//        Float z = 0F;
+//        System.err.println(Objects.equals(x, 0D));
+//        System.err.println(Objects.equals(y, 0));
+//        System.err.println(x>=0);
+//        System.err.println(Objects.equals(z, 0));
+//        System.err.println(Objects.equals(z, 0F));
 
 
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        System.err.println(list.stream().filter(i -> Objects.equals(i, 2)).count());
-        System.err.println(list.stream().filter(i -> Objects.equals(i, 1)).count());
+//        List<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        System.err.println(list.stream().filter(i -> Objects.equals(i, 2)).count());
+//        System.err.println(list.stream().filter(i -> Objects.equals(i, 1)).count());
 
     }
 

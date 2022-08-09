@@ -92,6 +92,19 @@ public class MyTest {
             System.out.println(field.getName());
         }
     }
+    @Test
+    public void fun41() throws ClassNotFoundException {
+
+//        Class<?> aClass = Class.forName(A.class.getName());
+        Class<?> aClass = Class.forName("com.test.entity.A");
+        System.out.println(A.class.getName());
+//        Method[] declaredMethods = aClass.getDeclaredMethods();
+        Method[] declaredMethods = aClass.getMethods();
+
+        for (Method method : declaredMethods){
+            System.out.println(method.getName());
+        }
+    }
 
     @Test
     public void fun5() {
